@@ -1,0 +1,34 @@
+{
+  "name": "ng-django-devstax",
+  "version": "1.0.0",
+  "description": "Angular & DJango REST Development Stack built with Vagrant & Chef",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jollyrubber/ng-django-devstax.git"
+  },
+  "author": "Juan Ayala",
+  "bugs": {
+    "url": "https://github.com/jollyrubber/ng-django-devstax/issues"
+  },
+  "homepage": "https://github.com/jollyrubber/ng-django-devstax#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^1.0.3",
+    "grunt-browserify": "^5.0.0",
+    "grunt-concurrent": "^2.2.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ng-constant": "^2.0.1",
+    "jshint-stylish": "^2.1.0",
+    "load-grunt-config": "^0.19.1",
+    "time-grunt": "^1.3.0"
+  }
+}

@@ -1,0 +1,7 @@
+source 'https://api.berkshelf.com'
+
+# community cookbooks
+cookbook 'mysql', '~> 6.1.2'
+cookbook 'mysql2_chef_gem', '~> 1.0.2'
+cookbook 'database', '~> 4.0.9'
+cookbook 'poise-python', '~> 1.2.1'

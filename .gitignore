@@ -1,0 +1,13 @@
+# Vagrant + Chef
+.vagrant/
+Berksfile.lock
+
+# DJango + Python
+django/static
+django/**/*.pyc
+
+# Node
+ng/node_modules/
+ng/dev/
+ng/dist/
+ng/npm-debug.log
