@@ -2,6 +2,9 @@
 .vagrant/
 Berksfile.lock
 
+# cookbooks downloaded by knife solo
+cookbooks/
+
 # DJango + Python
 django/static
 django/**/*.pyc

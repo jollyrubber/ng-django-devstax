@@ -4,6 +4,10 @@ db_username = node['ng-django-devstax']['django-db']['username']
 db_user_passwd = node['ng-django-devstax']['django-db']['password']
 db_root_passwd = node['ng-django-devstax']['django-db']['root-password']
 
+mysql2_chef_gem :default do
+    action :install
+end
+
 connection_info = {
     :host     => db_host,
     :username => :root,

@@ -1,0 +1,15 @@
+{
+    "chef_type": "role",
+    "name": "django-server",
+    "json_class": "Chef::Role",
+    "description": "A server to host the Django site for ng-django-devstax",
+    "run_list": [
+        "recipe[apt]",
+        "recipe[apache2]",
+        "recipe[apache2::mod_ssl]",
+        "recipe[git]",
+        "recipe[ng-django-devstax::mysql-client]",
+        "recipe[ng-django-devstax::django-virtualenv]",
+        "recipe[ng-django-devstax::django-webapp]"
+    ]
+}

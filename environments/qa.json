@@ -1,0 +1,45 @@
+{
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "name": "qa",
+    "description": "",
+    "override_attributes": {
+        "nodejs": {
+            "version": "4.4.0",
+            "install_method": "source",
+            "source": {
+                "checksum": "2cfc76292576d17a8f2434329221675972c96e5fd60cd694610f53134079f92e"
+            },
+            "npm_packages": [
+                { "name": "grunt-cli" }
+            ]
+        },
+        "ng-django-devstax": {
+            "mysql-server": {
+                "root-password": "Ch4ng3me"
+            },
+            "django-db": {
+                "host": "127.0.0.1",
+                "name": "qa-db",
+                "username": "qa-db-user",
+                "password": "S3cr3t",
+                "root-password": "Ch4ng3me"
+            },
+            "django-virtualenv": {
+                "virtualenv": "/var/ng-django/app-virtualenv",
+                "pip-requirements": "/var/ng-django/app-deploy/django/requirements.txt"
+            },
+            "django-webapp": {
+                "server-name": "qa.django-webapp.localdomain",
+                "docroot": "/var/ng-django/app-deploy/django",
+                "virtualenv": "/var/ng-django/app-virtualenv",
+                "django-settings": "ng-django_project.settings.qa",
+                "django-project-name": "ng-django_project"
+            },
+            "ng-webapp": {
+                "server-name": "qa.ng-webapp.localdomain",
+                "docroot": "/var/ng-django/app-deploy/ng/dist"
+            }
+        }
+    }
+}

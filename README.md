@@ -65,3 +65,26 @@ $ grunt runserver
 ```shell
 $ grunt dev
 ```
+
+### Knife Solo Deployment
+
+Install [Knife Solo](https://matschaffer.github.io/knife-solo)
+
+```shell
+$ chef gem install knife-solo
+```
+
+Install Chef client on the target nodes (`ng-server`,`django-server`,`db-server`)
+
+```shell
+$ knife solo prepare username@localhost --node-name ng-server --ssh-port 22
+$ knife solo prepare username@localhost --node-name django-server --ssh-port 22
+$ knife solo prepare username@localhost --node-name db-server --ssh-port 22
+```
+Provision the target nodes, using the `qa` environment
+
+```shell
+$ knife solo cook username@localhost --node-name ng-server --environment qa --forward-agent --ssh-port 22
+$ knife solo cook username@localhost --node-name django-server --environment qa --forward-agent --ssh-port 22
+$ knife solo cook username@localhost --node-name db-server --environment qa --forward-agent --ssh-port 22
+```

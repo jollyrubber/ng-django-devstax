@@ -1,0 +1,12 @@
+{
+    "chef_type": "role",
+    "name": "db-server",
+    "json_class": "Chef::Role",
+    "description": "A server to host the MySQL database for ng-django-devstax",
+    "run_list": [
+        "recipe[apt]",
+        "recipe[ng-django-devstax::mysql-server]",
+        "recipe[ng-django-devstax::mysql-client]",
+        "recipe[ng-django-devstax::django-db]"
+    ]
+}

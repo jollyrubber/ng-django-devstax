@@ -1,0 +1,45 @@
+{
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "name": "vagrant",
+    "description": "",
+    "override_attributes": {
+        "nodejs": {
+            "version": "4.4.0",
+            "install_method": "source",
+            "source": {
+                "checksum": "2cfc76292576d17a8f2434329221675972c96e5fd60cd694610f53134079f92e"
+            },
+            "npm_packages": [
+                { "name": "grunt-cli" }
+            ]
+        },
+        "ng-django-devstax": {
+            "mysql-server": {
+                "root-password": "Ch4ng3me"
+            },
+            "django-db": {
+                "host": "127.0.0.1",
+                "name": "dev-db",
+                "username": "dev-db-user",
+                "password": "S3cr3t",
+                "root-password": "Ch4ng3me"
+            },
+            "django-virtualenv": {
+                "virtualenv": "/home/vagrant/ng-django-project",
+                "pip-requirements": "/vagrant/django/requirements.txt"
+            },
+            "django-webapp": {
+                "server-name": "django-webapp.localdomain",
+                "docroot": "/vagrant/django",
+                "virtualenv": "/home/vagrant/ng-django-project",
+                "django-settings": "ng_django_project.settings.dev",
+                "django-project-name": "ng_django_project"
+            },
+            "ng-webapp": {
+                "server-name": "ng-webapp.localdomain",
+                "docroot": "/vagrant/ng/dev"
+            }
+        }
+    }
+}

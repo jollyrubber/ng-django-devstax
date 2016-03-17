@@ -40,61 +40,14 @@ Vagrant.configure('2') do |config|
     config.vm.provision :chef_solo do |chef|
 
         chef.log_level = :info
-        chef.json = {
-            :ark => {
-                :package_dependencies => [ 'multitail' ]
-                },
-            :nodejs => {
-                :version => '4.4.0',
-                :install_method => 'source',
-                :source => {
-                    :checksum => '2cfc76292576d17a8f2434329221675972c96e5fd60cd694610f53134079f92e'
-                    },
-                :npm_packages => [
-                    { :name => 'grunt-cli' }
-                    ]
-                },
-            'ng-django-devstax' => {
-                :mysql => {
-                    'root-password' => 'Ch4ng3me'
-                    },
-                'django-db' => {
-                    :host => '127.0.0.1',
-                    :name => 'dev-db',
-                    :username => 'dev-db-user',
-                    :password => 'S3cr3t',
-                    'root-password' => 'Ch4ng3me'
-                    },
-                'django-virtualenv' => {
-                    :virtualenv => '/home/vagrant/ng-django-project',
-                    'pip-requirements' => '/vagrant/django/requirements.txt'
-                    },
-                'ng-webapp' => {
-                    'server-name' => 'ng-webapp.localdomain',
-                    :docroot => '/vagrant/ng/dev'
-                    },
-                'django-webapp' => {
-                    'server-name' => 'django-webapp.localdomain',
-                    :docroot => '/vagrant/django',
-                    :virtualenv => '/home/vagrant/ng-django-project',
-                    'django-settings' => 'ng_django_project.settings.dev',
-                    'django-project-name' => 'ng_django_project'
-                    }
-                }
-        }
 
-        chef.add_recipe 'apt'
-        chef.add_recipe 'ark'
-        chef.add_recipe 'git'
-        chef.add_recipe 'nodejs'
-        chef.add_recipe 'apache2'
-        chef.add_recipe 'apache2::mod_ssl'
-        chef.add_recipe 'apache2::mod_wsgi'
-        chef.add_recipe 'ng-django-devstax::mysql'
-        chef.add_recipe 'ng-django-devstax::django-db'
-        chef.add_recipe 'ng-django-devstax::django-virtualenv'
-        chef.add_recipe 'ng-django-devstax::django-webapp'
-        chef.add_recipe 'ng-django-devstax::ng-webapp'
+        chef.environments_path = 'environments'
+        chef.roles_path = 'roles'
+
+        chef.environment = 'vagrant'
+        chef.add_role 'db-server'
+        chef.add_role 'ng-server'
+        chef.add_role 'django-server'
 
     end
 
