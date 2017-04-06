@@ -1,0 +1,9 @@
+{
+  "name": "ng-django-devstax",
+  "chef_environment": "vagrant",
+  "run_list": [
+    "role[db-server]",
+    "role[django-server]",
+    "role[ng-server]"
+  ]
+}

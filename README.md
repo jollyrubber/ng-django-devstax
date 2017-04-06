@@ -3,9 +3,9 @@
 Angular & Django REST Development Stack built with Vagrant & Chef
 
 ## Install
-- [ChefDK](https://downloads.chef.io/chef-dk/)
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/downloads.html)
+- [ChefDK v1.1.6](https://downloads.chef.io/chef-dk/)
+- [VirtualBox v5.1.12 r112440](https://www.virtualbox.org/wiki/Downloads)
+- [Vagrant v1.9.1](https://www.vagrantup.com/downloads.html)
 - A Git client because Chef may be cloning remote repositories
 
 Verify the ChefDK installation with

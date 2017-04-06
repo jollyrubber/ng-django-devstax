@@ -5,9 +5,10 @@
     "description": "A server to build and host the Angular site for ng-django-devstax",
     "run_list": [
         "recipe[apt]",
-        "recipe[nodejs]",
         "recipe[apache2]",
         "recipe[apache2::mod_ssl]",
-        "recipe[ng-django-devstax::ng-webapp]"
+        "recipe[nodejs]",
+        "recipe[ng-django-devstax::ng-webapp]",
+        "recipe[ng-django-devstax::nodejs-path]"
     ]
 }

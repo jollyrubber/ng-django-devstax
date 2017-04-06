@@ -5,12 +5,15 @@
     "description": "",
     "override_attributes": {
         "nodejs": {
-            "version": "4.4.0",
-            "install_method": "source",
-            "source": {
-                "checksum": "2cfc76292576d17a8f2434329221675972c96e5fd60cd694610f53134079f92e"
+            "version": "6.10.2",
+            "install_method": "binary",
+            "binary": {
+                "checksum": {
+                    "linux_x64": "b519cd616b0671ab789d2645c5c026deb7e016d73a867ab4b1b8c9ceba9c3503"
+                }
             },
             "npm_packages": [
+                { "name": "npm" },
                 { "name": "grunt-cli" }
             ]
         },
